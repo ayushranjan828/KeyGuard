@@ -45,3 +45,26 @@ KeyGuard implements a threshold secret sharing mechanism where a secret (used to
     {"x": 5, "y": 56789}
   ]
 }
+
+## 📂 Sample secret.txt
+
+```🔐 Secret File: Launch Code = XTZ-42B-KLM
+
+---
+
+## ⚙️ How to Compile & Run
+
+```
+    g++ main.cpp -o keyguard
+    ./keyguard
+
+## 🧑‍💻 Input Format
+You will be prompted to enter 5 key shares as x y pairs. For example:
+
+```
+Enter key 1 (x y): 1 12345
+Enter key 2 (x y): 2 23456
+Enter key 3 (x y): 3 34567
+Enter key 4 (x y): 4 45678
+Enter key 5 (x y): 5 56789
+
