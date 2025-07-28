@@ -45,6 +45,7 @@ KeyGuard implements a threshold secret sharing mechanism where a secret (used to
     {"x": 5, "y": 56789}
   ]
 }
+```
 
 ---
 ## 📂 Sample secret.txt
@@ -57,7 +58,7 @@ KeyGuard implements a threshold secret sharing mechanism where a secret (used to
 ```
     g++ main.cpp -o keyguard
     ./keyguard
-
+```
 ---
 ## 🧑‍💻 Input Format
       You will be prompted to enter 5 key shares as x y pairs. For example:
