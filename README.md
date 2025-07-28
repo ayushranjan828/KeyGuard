@@ -1,39 +1,40 @@
-🔐 KeyGuard
-KeyGuard is a secure file unlocking system implemented in C++, using Shamir’s Secret Sharing Algorithm. It requires exactly 5 valid keys to unlock a protected file. If any officer (or participant) provides an invalid or corrupt key, the file remains locked — ensuring high security and trust.
+# 🔐 KeyGuard
 
-🚀 Features
-✅ Implements Shamir’s Secret Sharing
+**KeyGuard** is a secure file unlocking system written in **C++**, built using **Shamir’s Secret Sharing Algorithm**. It ensures that a protected file can only be accessed when **exactly 5 correct key shares** are provided. If even **one key** is incorrect (e.g., from a corrupt officer), access is denied — keeping your secrets safe.
 
-✅ Unlock secret files with 5 valid key shares
+---
 
-✅ Access Denied if even one key is wrong
+## 🛡️ How It Works
 
-✅ Pure C++ (no external libraries)
+KeyGuard implements a threshold secret sharing mechanism where a secret (used to unlock a file) is divided into multiple key shares. Only when all required keys are submitted correctly, the original secret is reconstructed using **Lagrange Interpolation** over modular arithmetic.
 
-✅ Manual JSON parsing
+---
 
-✅ Modular arithmetic (add, sub, mul, div, inverse) via separate functions
+## 🚀 Features
 
-✅ Designed to handle large integer values (long long used)
+- ✅ Implements Shamir's Secret Sharing (threshold = 5)
+- ✅ Pure C++ solution (no external libraries)
+- ✅ Manual JSON file parsing
+- ✅ Large number support using `long long`
+- ✅ Modular arithmetic functions in separate logic
+- ✅ File remains locked if even **one officer is corrupt**
+- ✅ Secure and educational cryptographic demonstration
 
-📁 Files
-File
+---
 
-Description
+## 📁 File Structure
 
-main.cpp
+| File           | Description                                     |
+|----------------|-------------------------------------------------|
+| `main.cpp`     | Core implementation with all logic              |
+| `secret.json`  | Stores threshold and share key pairs            |
+| `secret.txt`   | Secret file that gets revealed if keys are valid|
 
-Core C++ implementation
+---
 
-secret.json
+## 🧪 Sample `secret.json`
 
-Stores the threshold and all share keys
-
-secret.txt
-
-The protected file revealed upon successful unlock
-
-🧪 Sample JSON (secret.json)
+```json
 {
   "threshold": 5,
   "shares": [
@@ -44,34 +45,3 @@ The protected file revealed upon successful unlock
     {"x": 5, "y": 56789}
   ]
 }
-
-🖥️ How to Compile & Run
-To compile the KeyGuard system, navigate to the project directory in your terminal and use a C++ compiler (like g++):
-
-g++ main.cpp -o keyguard
-
-After successful compilation, run the executable:
-
-./keyguard
-
-📥 Input Format
-At runtime, you'll be prompted to enter 5 (x, y) key pairs. Each pair should be entered on a new line, separated by a space:
-
-Enter key 1 (x y): 1 12345
-Enter key 2 (x y): 2 23456
-Enter key 3 (x y): 3 34567
-Enter key 4 (x y): 4 45678
-Enter key 5 (x y): 5 56789
-
-✅ Output (if keys are valid)
-If all 5 provided keys are correct and valid, you will see the following output, revealing the secret content from secret.txt:
-
-✅ Access Granted! Secret is correct.
- 
-📂 Secret Content:
-🔐 Secret File: Launch Code = XTZ-42B-KLM
-
-❌ Output (if any key is invalid)
-If even one of the provided keys is incorrect or corrupt, access will be denied:
-
-❌ Access Denied! Incorrect or corrupt officer keys.
