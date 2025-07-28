@@ -50,14 +50,14 @@ KeyGuard implements a threshold secret sharing mechanism where a secret (used to
 ---
 ## 📂 Sample secret.txt
 ```
-    🔐 Secret File: Launch Code = XTZ-42B-KLM
+🔐 Secret File: Launch Code = XTZ-42B-KLM
     
 ---
 ## ⚙️ How to Compile & Run
 
 ```
-    g++ main.cpp -o keyguard
-    ./keyguard
+g++ main.cpp -o keyguard
+./keyguard
 ```
 ---
 ## 🧑‍💻 Input Format
